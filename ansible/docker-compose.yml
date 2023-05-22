@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bitwarden:
+    image: bitwardenrs/server
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./bw-data:/data
+    environment:
+      WEBSOCKET_ENABLED: 'true'
+      SIGNUPS_ALLOWED: 'true'
